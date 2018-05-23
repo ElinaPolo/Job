@@ -15,5 +15,6 @@ namespace Job.Classes
             public decimal Salary { get; set; }
             public string Schedule { get; set; }
             public string Address { get; set; }  
+
     }
 }
