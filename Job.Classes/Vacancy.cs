@@ -8,6 +8,7 @@ namespace Job.Classes
 {
     class Vacancy
     {
+        
             public int Id { get; set; }
             public Employer Employer { get; set; }
             public string VacancyName { get; set; }
@@ -15,5 +16,7 @@ namespace Job.Classes
             public decimal Salary { get; set; }
             public string Schedule { get; set; }
             public string Address { get; set; }
+
+        
     }
 }
