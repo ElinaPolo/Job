@@ -22,6 +22,7 @@ namespace Team_Project
     {
         public MainWindow()
         {
+            int a=0;
             InitializeComponent();
         }
     }
