@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Job.Classes
 {
-    class Specialization
+    public class Specialization
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int Name { get; set; }
     }
 }

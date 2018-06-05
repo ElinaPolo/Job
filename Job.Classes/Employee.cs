@@ -8,5 +8,10 @@ namespace Job.Classes
 {
     class Employee
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string University { get; set; }
+        public string Faculty { get; set; }
+        public List<Specialization> Specializations { get; set; }
     }
 }

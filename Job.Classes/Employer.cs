@@ -12,6 +12,6 @@ namespace Job.Classes
             public string NameOfTheCompany { get; set; }
             public string Login { get; set; }
             public string Password { get; set; }
-            public List<Vacancy> Vacancies { get; set; }
+            //public List<Vacancy> Vacancies { get; set; }
     }
 }
