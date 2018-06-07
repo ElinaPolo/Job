@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Job.Classes
 {
-    public class Context
+    public class Context : DbContext
     {
         //static Context()
         //{
@@ -18,4 +19,7 @@ namespace Job.Classes
         //public DbSet<Specialization> Specializations_ { get; set; }
         //public DbSet<Vacancy> Vacancy_ { get; set; }
     }
+    //public class Initializer : CreateDatabaseIfNotExists<Context>
+    //{
+    //}
 }

@@ -12,6 +12,6 @@ namespace Job.Classes
         public string Name { get; set; }
         public string University { get; set; }
         public string Faculty { get; set; }
-        public List<Specialization> Specializations { get; set; }
+      
     }
 }

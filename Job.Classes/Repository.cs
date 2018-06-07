@@ -10,6 +10,25 @@ namespace Job.Classes
 {
     class Repository
     {
+        public Repository()
+        {
+            List<Specialization> spez = new List<Specialization>();
+
+            List<Specialization> ss = new List<Specialization>()
+           {
+               new Specialization("It"),
+               new Specialization("Hr"),
+               new Specialization("Top Management"),
+               new Specialization("Economics"),
+               new Specialization("Design"),
+               new Specialization("Mass Media"),
+               new Specialization("Security"),
+               new Specialization("Jurisprudence")
+           };
+            SaveList("spez.json", ss);
+            spez = RestoreList<Specialization>("spez.json");
+        }
+
         public static void SaveList<T>(string fileName, List<T> list)
         {
             using (var sw = new StreamWriter(fileName))
