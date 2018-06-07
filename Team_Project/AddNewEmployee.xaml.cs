@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Job.Classes;
 
 namespace Team_Project
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для AddNewEmployee.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class AddNewEmployee : Page
     {
-        public LoginPage(IRepository repository,bool i )
+        public AddNewEmployee()
         {
             InitializeComponent();
         }
