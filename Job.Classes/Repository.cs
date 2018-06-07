@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace Job.Classes
 {
-    class Repository
+   public class Repository
     {
         public static void SaveList<T>(string fileName, List<T> list)
         {

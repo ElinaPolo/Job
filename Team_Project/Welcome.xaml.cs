@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Job.Classes;
 
 namespace Team_Project
 {
@@ -20,6 +21,8 @@ namespace Team_Project
     /// </summary>
     public partial class Welcome : Page
     {
+       IRepository repository = new DataBaseRepository();
+       private bool ifemployer = true;
         public Welcome()
         {
             InitializeComponent();
@@ -27,12 +30,14 @@ namespace Team_Project
 
         private void EmployerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            bool ifemployer = true;
+            NavigationService.Navigate(new LoginPage(repository, ifemployer));
         }
 
         private void EmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            bool ifemployer = false;
+            NavigationService.Navigate(new LoginPage(repository, ifemployer));
         }
     }
 }

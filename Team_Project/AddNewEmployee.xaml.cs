@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Team_Project
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddNewEmployee.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddNewEmployee : Page
     {
-        public MainWindow()
+        public AddNewEmployee()
         {
             InitializeComponent();
-            FirstWindow.Navigate(new Welcome());
         }
     }
 }

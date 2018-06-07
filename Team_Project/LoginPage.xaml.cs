@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Job.Classes;
 
 namespace Team_Project
 {
@@ -20,7 +21,7 @@ namespace Team_Project
     /// </summary>
     public partial class LoginPage : Page
     {
-        public LoginPage()
+        public LoginPage(IRepository repository,bool i )
         {
             InitializeComponent();
         }

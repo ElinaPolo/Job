@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Job.Classes
 {
-    public class DataBaseRepository:IRepository
+    public interface IRepository
     {
+
     }
 }
