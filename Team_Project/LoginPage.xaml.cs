@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Team_Project
 {
     /// <summary>
-    /// Логика взаимодействия для Welcome.xaml
+    /// Логика взаимодействия для LoginPage.xaml
     /// </summary>
-    public partial class Welcome : Page
+    public partial class LoginPage : Page
     {
-        public Welcome()
+        public LoginPage()
         {
             InitializeComponent();
-        }
-
-        private void EmployerButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void EmployeeButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

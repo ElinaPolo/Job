@@ -8,15 +8,13 @@ namespace Job.Classes
 {
     class Vacancy
     {
-        
             public int Id { get; set; }
             public Employer Employer { get; set; }
             public string VacancyName { get; set; }
-            // public Specialization Specialization { get; set; }
+            public Specialization Specialization { get; set; }
             public decimal Salary { get; set; }
             public string Schedule { get; set; }
-            public string Address { get; set; }
+            public string Address { get; set; }  
 
-        
     }
 }
