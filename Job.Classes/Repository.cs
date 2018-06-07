@@ -10,10 +10,22 @@ namespace Job.Classes
 {
    public class Repository
     {
+        public List<Specialization> spez { get; set; }
+        public List<Grades> grade { get; set; }
+
         public Repository()
         {
-            List<Specialization> spez = new List<Specialization>();
-
+            List<Grades> gr = new List<Grades>()
+            {
+                new Grades("Primary"),
+                new Grades("Lower Secondary "),
+                new Grades("Upper Secondary"),
+                new Grades("Post-secondary"),
+                new Grades("Bachelor"),
+                new Grades("Master"),
+                new Grades("Doctoral")
+            };
+            SaveList("grades.json",gr);
             List<Specialization> ss = new List<Specialization>()
            {
                new Specialization("It"),
@@ -27,6 +39,7 @@ namespace Job.Classes
            };
             SaveList("spez.json", ss);
             spez = RestoreList<Specialization>("spez.json");
+            grade = RestoreList<Grades>("grades.json");
         }
 
         public static void SaveList<T>(string fileName, List<T> list)
