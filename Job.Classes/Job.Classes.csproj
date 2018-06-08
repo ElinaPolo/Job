@@ -55,6 +55,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Employer.cs" />
     <Compile Include="Grades.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\201806091619482_InitialCreate.cs" />
     <Compile Include="Migrations\201806091619482_InitialCreate.Designer.cs">
