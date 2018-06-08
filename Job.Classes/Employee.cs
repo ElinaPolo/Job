@@ -12,7 +12,8 @@ namespace Job.Classes
         public string Login { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
-        public string University { get; set; }
-        public string Faculty { get; set; }
+        public string Education { get; set; }
+        public Grades Grade { get; set; }
+        public List<Specialization> Specializations { get; set; }
     }
 }
