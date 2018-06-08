@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -26,19 +27,21 @@
         <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Fill in the following details</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Full name</TextBlock>
         <TextBox Name="textBoxFullname" Grid.Row="1" Grid.Column="1" Height="20" Margin="5" ></TextBox>
-        
-        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Grades</TextBlock>
-        <ComboBox Name="comboBoxEducation" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
 
-        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Full name</TextBlock>
-        <TextBox Name="textBox" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Education</TextBlock>
+        <TextBox Name="textBoxEducation" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+
+        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Grade</TextBlock>
+        <ComboBox Name="comboBoxEducation" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
+
+        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Specialization</TextBlock>
+        <ComboBox Name="textBox" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
         
-        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Login</TextBlock>
-        <TextBox Name="textBoxLogin" Grid.Row="4" Grid.Column="1" Margin="5" Height="20" ></TextBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">Password</TextBlock>
-        <TextBox Name="textBoxPassword" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
-        <PasswordBox Name="PasswordBox" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
-        <ListBox Name="Specialization" Grid.Row="6" Grid.Column="1" Height="Auto"/>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">Login</TextBlock>
+        <TextBox Name="textBoxLogin" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" ></TextBox>
+        <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">Password</TextBlock>
+        <TextBox Name="textBoxPassword" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
+        <PasswordBox Name="PasswordBox" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
         <Button Grid.Row="7" Grid.ColumnSpan="2" Width="Auto" Margin="5"  Background="DarkGray" Click="Register_Click" >Register</Button>
     </Grid>
 </Page>

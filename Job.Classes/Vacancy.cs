@@ -12,10 +12,9 @@ namespace Job.Classes
         public Employer Employer { get; set; }
         public string VacancyName { get; set; }
         public Specialization Specialization { get; set; }
-        public decimal Salary { get; set; }
-        public string Schedule { get; set; }
+        public string Salary { get; set; }
         public string Address { get; set; }
-        public string ContactMan { get; set; }
+        public string ContactPerson { get; set; }
         public string Number { get; set; }
     }
 }

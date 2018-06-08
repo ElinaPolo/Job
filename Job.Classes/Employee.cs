@@ -14,6 +14,6 @@ namespace Job.Classes
         public string Name { get; set; }
         public string Education { get; set; }
         public Grades Grade { get; set; }
-        public List<Specialization> Specializations { get; set; }
+        public Specialization Specializations { get; set; }
     }
 }
