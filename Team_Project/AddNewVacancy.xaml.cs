@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Job.Classes;
 
 namespace Team_Project
 {
@@ -20,9 +21,13 @@ namespace Team_Project
     /// </summary>
     public partial class AddNewVacancy : Page
     {
-        public AddNewVacancy()
+        private IRepository repository;
+        private Employer employer;
+        public AddNewVacancy(IRepository r, Employer e)
         {
             InitializeComponent();
+            repository = r;
+            employer = e;
         }
 
 
@@ -33,7 +38,7 @@ namespace Team_Project
 
         private void Cancel_Cick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EmployerAccountPage());
+            NavigationService.Navigate(new EmployerAccountPage(repository,employer));
         }
     }
 }

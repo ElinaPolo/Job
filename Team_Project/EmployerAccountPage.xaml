@@ -31,6 +31,6 @@
                 <DataGridTextColumn Width="1*" Header="Education"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="ButtonFavourites" Width="Auto" Height="25" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Click="ButtonFavourites_Click" Grid.Row="3" Grid.Column="1" Background="DarkGray" >Change favourites</Button>
+        
     </Grid>
 </Page>
