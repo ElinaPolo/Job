@@ -31,8 +31,10 @@ namespace Team_Project
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             var y = int.Parse(textBoxYear.Text);
-
-            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades);
+            var m = int.Parse(textBoxMonth.Text);
+            var d = int.Parse(textBoxDay.Text);
+            var date = new DateTime(y, m, d);
+            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades,date);
             NavigationService.Navigate(new LoginPage(repository, false));
         }
 
