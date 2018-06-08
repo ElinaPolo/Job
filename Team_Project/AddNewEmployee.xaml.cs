@@ -31,6 +31,7 @@ namespace Team_Project
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             var y = int.Parse(textBoxYear.Text);
+
             repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades);
             NavigationService.Navigate(new LoginPage(repository, false));
         }
