@@ -17,17 +17,17 @@ using Job.Classes;
 namespace Team_Project
 {
     /// <summary>
-    /// Логика взаимодействия для EmployerAccountPage.xaml
+    /// Логика взаимодействия для EmployeeAccountPage.xaml
     /// </summary>
-    public partial class EmployerAccountPage : Page
+    public partial class EmployeeAccountPage : Page
     {
         private IRepository repository;
-        private Employer employer;
-        public EmployerAccountPage(IRepository r, Employer e)
+        private Employee employee;
+        public EmployeeAccountPage(IRepository r, Employee e)
         {
             InitializeComponent();
             repository = r;
-            employer = e;
+            employee = e;
         }
     }
 }

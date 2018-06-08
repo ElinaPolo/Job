@@ -27,25 +27,40 @@ namespace Team_Project
         {
             InitializeComponent();
             ifemployer = i;
-            r = repository;
+            repository=r;
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            if(ifemployer==true)
-            {
-                
-            }
+            if (ifemployer == true)
+                NavigationService.Navigate(new AddNewEmployer(repository));
+            else
+                NavigationService.Navigate(new AddNewEmployee(repository));
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Cancel_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (textBoxLogin.Text == null)
+                MessageBox.Show("Please, enter your login");
+            if (PasswordBox.Password == null)
+                MessageBox.Show("Please, enter your password");
+            if (ifemployer == true)
+            {
+                var t = Employer.Sign(textBoxLogin.Text, PasswordBox.Password);
+                if (t != null)
+                    NavigationService.Navigate(new EmployerAccountPage(repository, t));
+                else
+                    MessageBox.Show("Wrong login or password");
+            }
+            else
+            {
+                var t = Employee.Sign(textBoxLogin.Text, PasswordBox.Password);
+                if (t != null)
+                    NavigationService.Navigate(new EmployeeAccountPage(repository, t));
+                else
+                    MessageBox.Show("Wrong login or password");
+            }
+               
         }
     }
 }

@@ -73,6 +73,9 @@
     <Compile Include="AddNewVacancy.xaml.cs">
       <DependentUpon>AddNewVacancy.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeAccountPage.xaml.cs">
+      <DependentUpon>EmployeeAccountPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EmployerAccountPage.xaml.cs">
       <DependentUpon>EmployerAccountPage.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddNewVacancy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
