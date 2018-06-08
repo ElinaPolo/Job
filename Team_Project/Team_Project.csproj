@@ -70,6 +70,9 @@
     <Compile Include="AddNewEmployer.xaml.cs">
       <DependentUpon>AddNewEmployer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddNewResumePage.xaml.cs">
+      <DependentUpon>AddNewResumePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddNewVacancy.xaml.cs">
       <DependentUpon>AddNewVacancy.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddNewEmployer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddNewResumePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
