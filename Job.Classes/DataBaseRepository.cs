@@ -9,7 +9,9 @@ namespace Job.Classes
 {
     public class DataBaseRepository : IRepository
     {
-        //  public Employee Register(string login, string password, string name,string education, )
+        public List<Employee> employee { get; set; }
+        public List<Employer> employer { get; set; }
+
         public  void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade)
         {
             using (var context = new Context())
