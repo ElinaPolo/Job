@@ -56,6 +56,15 @@
     <Compile Include="Employer.cs" />
     <Compile Include="Grades.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201806091619482_InitialCreate.cs" />
+    <Compile Include="Migrations\201806091619482_InitialCreate.Designer.cs">
+      <DependentUpon>201806091619482_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806091623297_pervenez.cs" />
+    <Compile Include="Migrations\201806091623297_pervenez.Designer.cs">
+      <DependentUpon>201806091623297_pervenez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Specialization.cs" />
@@ -64,6 +73,14 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="spez.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806091619482_InitialCreate.resx">
+      <DependentUpon>201806091619482_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806091623297_pervenez.resx">
+      <DependentUpon>201806091623297_pervenez.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
