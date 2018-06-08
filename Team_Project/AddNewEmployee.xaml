@@ -37,6 +37,6 @@
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">Password</TextBlock>
         <TextBox Name="textBoxPassword" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
         <PasswordBox Name="PasswordBox" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
-        <Button Grid.Row="6" Grid.ColumnSpan="2" Width="Auto" Margin="5"  Background="DarkGray" Click="Register_Click">Register</Button>
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Width="Auto" Margin="5"  Background="DarkGray" Click="Register_Click" >Register</Button>
     </Grid>
 </Page>
