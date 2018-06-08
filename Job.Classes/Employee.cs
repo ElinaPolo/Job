@@ -15,5 +15,15 @@ namespace Job.Classes
         public string Education { get; set; }
         public Grades Grade { get; set; }
         public Specialization Specializations { get; set; }
+        public static Employee Sign(string login, string password)
+        {
+            //Users = Repository.RestoreList<User>("../../users.json");
+            using (var context = new Context())
+            {
+                var sing = new Employee();
+                sing = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == password);
+                return sing;
+            }
+        }
     }
 }
