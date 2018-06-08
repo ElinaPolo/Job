@@ -20,7 +20,7 @@ namespace Job.Classes
             using (var context = new Context())
             {
                 var sign = new Employer();
-                sign = context.Employer_.FirstOrDefault(m => m.Login == login && m.Password == DataBaseRepository.GetHash(password));
+                sign = context.Employer_.FirstOrDefault(m => m.Login == login && m.Password ==password);
                 return sign;
             }
         }       
