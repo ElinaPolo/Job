@@ -29,5 +29,10 @@ namespace Team_Project
         {
 
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+           // NavigationService.Navigate(new LoginPage());
+        }
     }
 }

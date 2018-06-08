@@ -24,10 +24,15 @@ namespace Team_Project
         {
             InitializeComponent();
         }
-       
+
         private void Register_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+           // NavigationService.Navigate(new LoginPage());
         }
     }
 }

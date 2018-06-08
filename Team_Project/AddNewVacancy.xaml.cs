@@ -24,5 +24,15 @@ namespace Team_Project
         {
             InitializeComponent();
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Cick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EmployerAccountPage());
+        }
     }
 }

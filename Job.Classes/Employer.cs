@@ -16,7 +16,6 @@ namespace Job.Classes
         public List<Vacancy> Vacancies { get; set; }
         public static Employer Sign(string login, string password)
         {
-            //Users = Repository.RestoreList<User>("../../users.json");
             using (var context = new Context())
             {
                 var sing = new Employer();

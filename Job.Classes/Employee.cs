@@ -17,7 +17,6 @@ namespace Job.Classes
         public Specialization Specializations { get; set; }
         public static Employee Sign(string login, string password)
         {
-            //Users = Repository.RestoreList<User>("../../users.json");
             using (var context = new Context())
             {
                 var sing = new Employee();

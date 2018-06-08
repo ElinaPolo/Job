@@ -21,9 +21,31 @@ namespace Team_Project
     /// </summary>
     public partial class LoginPage : Page
     {
-        public LoginPage(IRepository repository,bool i )
+        private IRepository repository;
+        private bool ifemployer;
+        public LoginPage(IRepository r,bool i )
         {
             InitializeComponent();
+            ifemployer = i;
+            r = repository;
+        }
+
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            if(ifemployer==true)
+            {
+                
+            }
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
