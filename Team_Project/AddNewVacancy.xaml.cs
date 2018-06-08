@@ -33,7 +33,8 @@ namespace Team_Project
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            repository.AddVacancy(employer, textBoxVacancyName.Text, textBoxSalary.Text, textBoxAddress.Text, textBoxContact.Text, textBoxContactPerson.Text, comboBoxSpecialization.SelectedItem as Specialization);
+            NavigationService.Navigate(new EmployerAccountPage(repository, employer));
         }
 
         private void Cancel_Cick(object sender, RoutedEventArgs e)

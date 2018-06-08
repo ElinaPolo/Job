@@ -44,9 +44,9 @@
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5">Month</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5">Day</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">BirthDate</TextBlock>
-        <TextBox Name="textBoxDay" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" ></TextBox>
+        <TextBox Name="textBoxYear" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" ></TextBox>
         <TextBox Name="textBoxMonth" Grid.Row="6" Grid.Column="2" Margin="5" Height="20" ></TextBox>
-        <TextBox Name="textBoxYear" Grid.Row="6" Grid.Column="3" Margin="5" Height="20" ></TextBox>
+        <TextBox Name="textBoxDay" Grid.Row="6" Grid.Column="3" Margin="5" Height="20" ></TextBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">Login</TextBlock>
         <TextBox Name="textBoxLogin" Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="1" Margin="5" Height="20" ></TextBox>

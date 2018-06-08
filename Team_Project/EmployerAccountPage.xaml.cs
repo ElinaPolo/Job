@@ -28,6 +28,8 @@ namespace Team_Project
             InitializeComponent();
             repository = r;
             employer = e;
+            // ComboBoxGrades.ItemsSource = repository.Grades;
+           // ComboBoxSpecializations.ItemsSource = repository.Specialization;
         }
     }
 }
