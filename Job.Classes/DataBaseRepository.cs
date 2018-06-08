@@ -8,6 +8,6 @@ namespace Job.Classes
 {
     public class DataBaseRepository:IRepository
     {
-        public Employee Register(string login, string password, string name,string education)
+       // public Employee Register(string login, string password, string name,string education)
     }
 }
