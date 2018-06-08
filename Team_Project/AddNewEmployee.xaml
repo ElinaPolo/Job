@@ -36,10 +36,10 @@
         <TextBox Name="textBoxEducation" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Grade</TextBlock>
-        <ComboBox Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
+        <ComboBox Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Grade" ></ComboBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Specialization</TextBlock>
-        <ComboBox Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
+        <ComboBox Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Name" ></ComboBox>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Height="20" Margin="5">Year</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5">Month</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5">Day</TextBlock>

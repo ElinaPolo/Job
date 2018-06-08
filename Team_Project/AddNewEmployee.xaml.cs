@@ -26,6 +26,9 @@ namespace Team_Project
         {
             InitializeComponent();
             repository = r;
+            repository.ReadData();
+            comboBoxGrade.ItemsSource = repository.grades;
+            comboBoxSpecialization.ItemsSource = repository.specializations;
         }
 
         private void Register_Click(object sender, RoutedEventArgs e)
