@@ -20,6 +20,7 @@ namespace Job.Classes
         public DbSet<Specialization> Specializations_ { get; set; }
         public DbSet<Vacancy> Vacancy_ { get; set; }
         public DbSet<Grades> Grade_ { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
     }
     public class Initializer : CreateDatabaseIfNotExists<Context>
     {
