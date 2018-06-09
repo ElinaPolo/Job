@@ -23,13 +23,20 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Fill in the following details</TextBlock>
-        <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">The name of the company</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Full name</TextBlock>
         <TextBox Name="textBoxFullname" Grid.Row="1" Grid.Column="1" Height="20" Margin="5" ></TextBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Login</TextBlock>
-        <TextBox Name="textBoxLogin" Grid.Row="2" Grid.Column="1" Margin="5" Height="20" ></TextBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Password</TextBlock>
-        <TextBox Name="textBoxPassword" Grid.Row="3" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
-        <PasswordBox Name="PasswordBox" Grid.Row="3" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
+        
+        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Education</TextBlock>
+        <TextBox Name="textBoxEducation" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+
+        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Full name</TextBlock>
+        <TextBox Name="textBox" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+        
+        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Login</TextBlock>
+        <TextBox Name="textBoxLogin" Grid.Row="4" Grid.Column="1" Margin="5" Height="20" ></TextBox>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">Password</TextBlock>
+        <TextBox Name="textBoxPassword" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
+        <PasswordBox Name="PasswordBox" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
         <Button Grid.Row="5" Grid.ColumnSpan="2" Width="Auto" Margin="5" Click="ButtonRegister_Click" Background="DarkGray">Register</Button>
     </Grid>
 </Page>
