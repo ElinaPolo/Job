@@ -8,7 +8,7 @@ namespace Job.Classes
 {
     public class Helper
     {
-        public List<Employee> Employees(Grades grade, Specialization specialization)
+        public static List<Employee> Employees(Grades grade, Specialization specialization)
         {
             var emp = new List<Employee>();
 

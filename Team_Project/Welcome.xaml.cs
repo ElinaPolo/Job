@@ -31,7 +31,7 @@ namespace Team_Project
         private void EmployerButton_Click(object sender, RoutedEventArgs e)
         {
             bool ifemployer = true;
-            if()
+           
             NavigationService.Navigate(new LoginPage(repository, ifemployer));
         }
 
