@@ -30,8 +30,7 @@ namespace Team_Project
             FirstWindow.Navigate(new Welcome());
             using (var context = new Context())
             {
-                var dr = context.Grade_.ToList();
-                
+                var Spez = context.Grade_.ToList();               
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Job.Classes
         public string Education { get; set; }
         public bool Work { get; set; }
         public DateTime BirthDate { get; set; }
-        public bool StayOnline { get; set; }
+        public Employer Employer_ { get; set; }
         public Grades Grade { get; set; }
         public Specialization Specializations { get; set; }
         public List<Resume> Resumes { get; set; }

@@ -78,7 +78,7 @@ namespace Job.Classes
             }
 
         }
-        public void AddResume(Employee employee, string commentary)
+        public Resume AddResume(Employee employee, string commentary)
         {
             using (var context = new Context())
             {
@@ -94,6 +94,7 @@ namespace Job.Classes
                 }
                 context.Resumes.Add(resume);
                 context.SaveChanges();
+                return resume;
             }
         }
         public static string GetHash(string password)
@@ -142,16 +143,16 @@ namespace Job.Classes
             using (var context = new Context())
             {
                 bool q = true;
-                if (employer.Employees == null)
+                if (employer.Employees_ == null)
                 {
-                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees = new List<Employee>();
+                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_ = new List<Employee>();
                 }
                 foreach (var c in context.Employer_)
                 {
                     if (c.Id == employer.Id)
                         context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee.Work = q;
                 }
-                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees.Add(context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee);
+                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_.Add(context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee);
                 context.SaveChanges();
             }
 
@@ -160,7 +161,7 @@ namespace Job.Classes
             {
             using (var context=new Context())
             {
-                return context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees.ToList();
+                return context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_.ToList();
             }
 
         }
