@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            
         </Grid.RowDefinitions>
         <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">Who are you?</TextBlock>
                 <StackPanel Orientation="Horizontal" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"
