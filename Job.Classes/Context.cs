@@ -12,6 +12,7 @@ namespace Job.Classes
         static Context()
         {
             Database.SetInitializer(new Initializer());
+            
         }
         public Context() : base("DefaultConnection") { }
         public DbSet<Employee> Employee_ { get; set; }
