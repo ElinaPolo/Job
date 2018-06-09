@@ -34,8 +34,9 @@ namespace Team_Project
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            repository.AddResume(employee, textBoxComment.Text);
-            NavigationService.Navigate(new )
+            var r = repository.AddResume(employee, textBoxComment.Text);
+            repository.SendResume(employer, employee, r);
+            NavigationService.Navigate(new EmployeeAccountPage(repository, employee));
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

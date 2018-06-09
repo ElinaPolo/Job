@@ -18,6 +18,7 @@ namespace Job.Classes
         List<Grades> GetGrades();
         List<Specialization> GetSpecializations();
         void ReadData();
-        void AddResume(Employee employee, string commentary);
+        Resume AddResume(Employee employee, string commentary);
+        void SendResume(Employer employer, Employee employee, Resume resume);
     }
 }
