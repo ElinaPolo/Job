@@ -18,5 +18,6 @@ namespace Job.Classes
         List<Grades> GetGrades();
         List<Specialization> GetSpecializations();
         void ReadData();
+        void AddResume(Employee employee, string commentary);
     }
 }

@@ -34,7 +34,8 @@ namespace Team_Project
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-
+            repository.AddResume(employee, textBoxComment.Text);
+            NavigationService.Navigate(new )
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
