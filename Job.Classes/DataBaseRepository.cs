@@ -138,7 +138,7 @@ namespace Job.Classes
                 context.SaveChanges();
             }
         }
-        public void resume(Employer employer, Resume resume)
+        public void AcceptResume(Employer employer, Resume resume)
         {
             using (var context = new Context())
             {
