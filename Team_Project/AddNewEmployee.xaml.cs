@@ -30,7 +30,8 @@ namespace Team_Project
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-           // repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades);
+            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades);
+
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
