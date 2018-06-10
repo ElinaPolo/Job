@@ -16,6 +16,7 @@ namespace Job.Classes
         public DateTime BirthDate { get; set; }
         public Grades Grade { get; set; }
         public Specialization Specializations { get; set; }
+        public List<Resume> Resumes { get; set; }
         public static Employee Sign(string login, string password)
         {
             using (var context = new Context())

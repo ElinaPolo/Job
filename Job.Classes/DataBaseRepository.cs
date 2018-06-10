@@ -13,7 +13,7 @@ namespace Job.Classes
         public List<Employer> employer { get; set; }
 
 
-        public  void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade)
+        public  void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade, DateTime birthdate)
         {
             using (var context = new Context())
             {
@@ -23,6 +23,7 @@ namespace Job.Classes
                     Login = login,
                     Password = GetHash(password),
                     Education =education ,
+                    BirthDate=birthdate,
                     Specializations = context.Specializations_.FirstOrDefault(x => x.Id == specialization.Id),
                     Grade = context.Grade_.FirstOrDefault(m=> m.Id==grade.Id)
                 };
@@ -69,12 +70,39 @@ namespace Job.Classes
             }
 
         }
+        public void AddResume(Employee employee, string commentary)
+        {
+            using (var context = new Context())
+            {
+                var resume = new Resume()
+                {
+                    Employee = context.Employee_.FirstOrDefault(x => x.Login == employee.Login),
+                    Age = GetAge(employee),
+                    Commentary=commentary
+                };
+                if(employee.Resumes==null)
+                {
+                    context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes = new List<Resume>();
+                }
+                context.Resumes.Add(resume);
+                context.SaveChanges();
+            }
+        }
         public static string GetHash(string password)
         {
             var md5 = MD5.Create();
             var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
             return Convert.ToBase64String(hash);
         }
-        
+        public int GetAge(Employee employee)
+        {
+            var currentDate = DateTime.Now;
+
+            int age = currentDate.Year - employee.BirthDate.Year;
+            if (currentDate.Month < employee.BirthDate.Month ||
+                (currentDate.Month == employee.BirthDate.Month && currentDate.Day < employee.BirthDate.Day))
+                age--;
+            return age;
+        }
     }
 }
