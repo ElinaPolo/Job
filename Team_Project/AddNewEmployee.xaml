@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Team_Project"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="400"
       Title="AddNewEmployee">
 
     <Grid Margin="5" Background="GhostWhite">
@@ -19,30 +19,41 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">Fill in the following details</TextBlock>
-        <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">Full name</TextBlock>
-        <TextBox Name="textBoxFullname" Grid.Row="1" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+        <TextBlock VerticalAlignment="Center"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">Fill in the following details</TextBlock>
+        <TextBlock VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0">Full name</TextBlock>
+        <TextBox Name="textBoxFullname" Grid.ColumnSpan="3"  Grid.Row="1" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Education</TextBlock>
-        <TextBox Name="textBoxEducation" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
+        <TextBox Name="textBoxEducation" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Grade</TextBlock>
-        <ComboBox Name="comboBoxGrade" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
+        <ComboBox Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Specialization</TextBlock>
-        <ComboBox Name="comboBoxSpecialization" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
-        
-        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">Login</TextBlock>
-        <TextBox Name="textBoxLogin" Grid.Row="5" Grid.Column="1" Margin="5" Height="20" ></TextBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">Password</TextBlock>
-        <TextBox Name="textBoxPassword" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
-        <PasswordBox Name="PasswordBox" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
-        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Margin="0 10 0 0">
+        <ComboBox Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" ></ComboBox>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Height="20" Margin="5">Year</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5">Month</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5">Day</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">BirthDate</TextBlock>
+        <TextBox Name="textBoxDay" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" ></TextBox>
+        <TextBox Name="textBoxMonth" Grid.Row="6" Grid.Column="2" Margin="5" Height="20" ></TextBox>
+        <TextBox Name="textBoxYear" Grid.Row="6" Grid.Column="3" Margin="5" Height="20" ></TextBox>
+
+        <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">Login</TextBlock>
+        <TextBox Name="textBoxLogin" Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="1" Margin="5" Height="20" ></TextBox>
+        <TextBlock VerticalAlignment="Center" Grid.Row="8" Grid.Column="0">Password</TextBlock>
+        <TextBox Name="textBoxPassword" Grid.ColumnSpan="3" Grid.Row="8" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
+        <PasswordBox Name="PasswordBox" Grid.ColumnSpan="3" Grid.Row="8" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Margin="0 10 0 0">
             <Button Width="Auto" Margin="5" Background="DarkGray" Click="Register_Click"  >Register</Button>
             <Button Width="Auto" Margin="5" Background="DarkGray" Click="Cancel_Click"  >Cancel</Button>
         </StackPanel>

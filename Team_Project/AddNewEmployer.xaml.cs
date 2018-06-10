@@ -30,7 +30,8 @@ namespace Team_Project
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-
+            repository.SaveEmployer(textBoxCompanyname.Text, textBoxLogin.Text, PasswordBox.Password);
+            NavigationService.Navigate(new LoginPage(repository, true));
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
