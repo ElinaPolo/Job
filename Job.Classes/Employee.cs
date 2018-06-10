@@ -13,7 +13,7 @@ namespace Job.Classes
         public string Password { get; set; }
         public string Name { get; set; }
         public string Education { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTime BirthDate { get; set; }
         public Grades Grade { get; set; }
         public Specialization Specializations { get; set; }
         public static Employee Sign(string login, string password)
