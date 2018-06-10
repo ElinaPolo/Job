@@ -31,7 +31,7 @@
                     >
             <Button Width="Auto"  Margin="5"  Background="DarkGray" Click="Register_Click"  >Register</Button>
             <Button Width="Auto"  Margin="5"   Background="DarkGray" Click="Login_Click" >Log in</Button>
-            <Button Width="Auto" Margin="5" Background="DarkGray" Click="Cancel_Click" >Cancel</Button>
+            
         </StackPanel>
     </Grid>
 </Page>
