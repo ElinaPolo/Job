@@ -18,12 +18,10 @@ namespace Job.Classes
         {
             using (var context = new Context())
             {
-                var sing = new Employer();
-                sing = context.Employer_.FirstOrDefault(m => m.Login == login && m.Password == password);
-                return sing;
+                var sign = new Employer();
+                sign = context.Employer_.FirstOrDefault(m => m.Login == login && m.Password == password);
+                return sign;
             }
-        }
-
-        
+        }       
     }
 }

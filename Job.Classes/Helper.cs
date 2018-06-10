@@ -8,30 +8,34 @@ namespace Job.Classes
 {
    public class Helper
     {
-        //public static void Employee(Grades grade, Specialization specialization)
-        //{
-        //    var emp = new List<Employee>();
-        //    using (var context = new Context())
-        //    {
-        //        if (grade != null)
-        //        {
-        //            foreach (var c in context.Employee_)
-        //            {
-        //                if (grade == c.Grade)
-        //                    emp.Add(c);
-        //            }
-        //        }
+        public List<Employee> Employees (Grades grade, Specialization specialization)
+        {
+            var emp = new List<Employee>();
 
-        //        if (specialization != null)
+            using (var context = new Context())
+            {
+                foreach (var c in context.Employee_)
+                {
+                    if (grade != null && specialization != null)
+                    {
+                        if (c.Grade.Id == grade.Id)
+                            if (c.Specializations.Id == specialization.Id)
+                                emp.Add(c);
+                    }
+                    else
+                    if (grade != null)
+                        if (c.Grade.Id == grade.Id)
+                            emp.Add(c);
+                        else
+                        if (specialization != null)
+                            emp.Add(c);
+                        else
+                            emp.Add(c);
+                   }
 
-        //        {
-        //            foreach (var v in context.Employee_)
-        //            {
-        //                if(emp)
-
-        //            }
-        //        }
-        //    }
-        //}
+           }
+            return emp;
+        }
+        //public int Age()
     }
 }

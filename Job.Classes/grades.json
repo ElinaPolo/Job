@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 0,
+    "Grade": "Primary"
+  },
+  {
+    "Id": 1,
+    "Grade": "Lower Secondary "
+  },
+  {
+    "Id": 2,
+    "Grade": "Upper Secondary"
+  },
+  {
+    "Id": 3,
+    "Grade": "Post-secondary"
+  },
+  {
+    "Id": 4,
+    "Grade": "Bachelor"
+  },
+  {
+    "Id": 5,
+    "Grade": "Master"
+  },
+  {
+    "Id": 6,
+    "Grade": "Doctoral"
+  }
+]

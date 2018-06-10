@@ -13,15 +13,16 @@ namespace Job.Classes
         public string Password { get; set; }
         public string Name { get; set; }
         public string Education { get; set; }
+        public DateTime Birthdate { get; set; }
         public Grades Grade { get; set; }
         public Specialization Specializations { get; set; }
         public static Employee Sign(string login, string password)
         {
             using (var context = new Context())
             {
-                var sing = new Employee();
-                sing = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == password);
-                return sing;
+                var sign = new Employee();
+                sign = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == password);
+                return sign;
             }
         }
     }

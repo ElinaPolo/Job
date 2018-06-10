@@ -72,6 +72,7 @@
     <Compile Include="Vacancy.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="grades.json" />
     <None Include="packages.config" />
     <None Include="spez.json" />
   </ItemGroup>
