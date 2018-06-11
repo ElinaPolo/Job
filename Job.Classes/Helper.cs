@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Job.Classes
 {
-   public class Helper
+    public class Helper
     {
-        public List<Employee> Employees (Grades grade, Specialization specialization)
+        public List<Employee> Employees(Grades grade, Specialization specialization)
         {
             var emp = new List<Employee>();
 
@@ -28,14 +28,34 @@ namespace Job.Classes
                             emp.Add(c);
                         else
                         if (specialization != null)
-                            emp.Add(c);
+                        {
+                            if (c.Specializations.Id == specialization.Id)
+                                emp.Add(c);
+                        }
                         else
                             emp.Add(c);
-                   }
+                }
 
-           }
+            }
             return emp;
         }
-        //public int Age()
+        public List<Vacancy> Vacancies(Specialization specialization)
+        {
+            var vacancy = new List<Vacancy>();
+            using (var context = new Context())
+            {
+                foreach (var m in context.Vacancy_)
+                {
+                    if (specialization != null)
+                    {
+                        if (m.Specialization.Id == specialization.Id)
+                            vacancy.Add(m);
+                    }
+                    else vacancy.Add(m);
+                }
+            }
+            return vacancy;
+        }
+
     }
 }
