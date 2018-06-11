@@ -10,12 +10,12 @@ namespace Job.Classes
     [Table("Grade")]
     public class Grades
     {
-        static int _id = 0;
+        static int _name = 0;
         public int Id { get; set; }
         public string Grade { get; set; }
         public Grades(string grade)
         {
-            Id = _id++;
+            Id = _name++;
             Grade = grade;
         }
         public Grades()

@@ -11,8 +11,15 @@ namespace Job.Classes
     {
         public List<Employee> employee { get; set; }
         public List<Employer> employer { get; set; }
-
-
+        public List<Grades> grades { get; set; }
+        public List<Specialization> specializations { get; set; }
+        public DataBaseRepository() { }
+        public void ReadData()
+        {
+            grades = GetGrades();
+            specializations = GetSpecializations();
+        }
+               
         public void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade, DateTime birthdate)
         {
             using (var context = new Context())
@@ -119,5 +126,14 @@ namespace Job.Classes
                 return context.Specializations_.ToList();
             }
         }
+        //public void SendResume(Employer employer, Employee employee,Resume resume)
+        //{
+        //    using (var context = new Context())
+        //    {
+        //        if (employer.Resumes == null)
+        //            context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
+                
+        //    }
+        //}
     }
 }

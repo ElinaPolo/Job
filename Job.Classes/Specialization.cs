@@ -10,12 +10,13 @@ namespace Job.Classes
     [Table("Specialization")]
     public class Specialization
     {
-        static int _id = 0;
+        static int _num = 0;
         public int Id { get; set; }
         public string Name { get; set; }
+        public List<Employee> Employees { get; set; }
         public Specialization(string name)
         {
-            Id = _id++;
+            Id = _num++;
             Name = name;
         }
 
