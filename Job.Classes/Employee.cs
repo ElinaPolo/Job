@@ -22,7 +22,7 @@ namespace Job.Classes
             using (var context = new Context())
             {
                 var sign = new Employee();
-                sign = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == password);
+                sign = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == DataBaseRepository.GetHash(password));
                 return sign;
             }
         }
