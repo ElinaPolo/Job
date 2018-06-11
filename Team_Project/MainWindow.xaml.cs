@@ -22,14 +22,16 @@ namespace Team_Project
     public partial class MainWindow : Window
     {
         Repository rep = new Repository();
+        DataBaseRepository repp = new DataBaseRepository();
         public MainWindow()
         {
             InitializeComponent();
             FirstWindow.Navigate(new Welcome());
-            //using (var context = new Context())
-            //{
-            //    var Spez = context.Specializations_.ToList();
-            //}
+            using (var context = new Context())
+            {
+                var Spez = context.Specializations_.ToList();
+                
+            }
         }
     }
 }

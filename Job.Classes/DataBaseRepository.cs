@@ -126,14 +126,16 @@ namespace Job.Classes
                 return context.Specializations_.ToList();
             }
         }
-        //public void SendResume(Employer employer, Employee employee,Resume resume)
-        //{
-        //    using (var context = new Context())
-        //    {
-        //        if (employer.Resumes == null)
-        //            context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
-                
-        //    }
-        //}
+        public void SendResume(Employer employer, Employee employee, Resume resume)
+        {
+            using (var context = new Context())
+            {
+                if (employer.Resumes == null)
+                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
+                var m = context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes.FirstOrDefault(x => x.Id == resume.Id);
+                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes.Add(m);
+                context.SaveChanges();
+            }
+        }
     }
 }
