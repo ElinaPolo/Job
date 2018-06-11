@@ -57,6 +57,15 @@
     <Compile Include="Grades.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201806111325497_InitialCreate.cs" />
+    <Compile Include="Migrations\201806111325497_InitialCreate.Designer.cs">
+      <DependentUpon>201806111325497_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806112037009_SomeChanges.cs" />
+    <Compile Include="Migrations\201806112037009_SomeChanges.Designer.cs">
+      <DependentUpon>201806112037009_SomeChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="Resume.cs" />
@@ -67,6 +76,14 @@
     <None Include="grades.json" />
     <None Include="packages.config" />
     <None Include="spez.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806111325497_InitialCreate.resx">
+      <DependentUpon>201806111325497_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806112037009_SomeChanges.resx">
+      <DependentUpon>201806112037009_SomeChanges.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
