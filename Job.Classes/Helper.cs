@@ -14,7 +14,7 @@ namespace Job.Classes
 
             using (var context = new Context())
             {
-                foreach (var c in context.Employee_)
+                foreach (var c in context.Employee_.Include("Grade").Include("Specializations"))
                 {
                     if (grade != null && specialization != null)
                     {
@@ -56,5 +56,6 @@ namespace Job.Classes
             }
             return vacancy;
         }
+      
     }  
 }

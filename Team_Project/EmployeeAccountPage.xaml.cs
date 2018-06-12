@@ -21,6 +21,7 @@ namespace Team_Project
     /// </summary>
     public partial class EmployeeAccountPage : Page
     {
+        
         private IRepository repository;
         private Employee employee;
         public EmployeeAccountPage(IRepository r, Employee e)
@@ -28,6 +29,16 @@ namespace Team_Project
             InitializeComponent();
             repository = r;
             employee = e;
+            repository.ReadVacancies();
+            DataGridResult.ItemsSource = null;
+            DataGridResult.ItemsSource = repository.vacancies;
         }
+
+        private void DefSpecialization_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridResult.ItemsSource = null;
+            DataGridResult.ItemsSource = repository.Vacancies;
+        }
+    }
     }
 }

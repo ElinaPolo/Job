@@ -12,12 +12,18 @@ namespace Job.Classes
         public List<Employee> employee { get; set; }
         public List<Employer> employer { get; set; }
         public List<Grades> grades { get; set; }
+        public List<Vacancy> vacancies { get; set; }
         public List<Specialization> specializations { get; set; }
         public DataBaseRepository() { }
         public void ReadData()
         {
             grades = GetGrades();
             specializations = GetSpecializations();
+         
+        }
+        public void ReadVacancies()
+        {
+            vacancies = GetVacancies();
         }
 
         public void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade, DateTime birthdate)
@@ -118,6 +124,13 @@ namespace Job.Classes
             using (var context = new Context())
             {
                 return context.Grade_.ToList();
+            }
+        }
+        public List<Vacancy> GetVacancies()
+        {
+            using (var context = new Context())
+            {
+                return context.Vacancy_.ToList();
             }
         }
         public List<Specialization> GetSpecializations()

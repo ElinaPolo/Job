@@ -36,5 +36,29 @@ namespace Team_Project
             var sp = ComboBoxSpecializations.SelectedItem as Specialization;
             DataGridResult.ItemsSource = Helper.Employees(gr, sp);
         }
+
+        private void ComboBoxSpecializations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var gr = ComboBoxGrades.SelectedItem as Grades;
+            var sp = ComboBoxSpecializations.SelectedItem as Specialization;
+            DataGridResult.ItemsSource = Helper.Employees(gr, sp);
+        }
+
+        private void ComboBoxGrades_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var gr = ComboBoxGrades.SelectedItem as Grades;
+            var sp = ComboBoxSpecializations.SelectedItem as Specialization;
+            DataGridResult.ItemsSource = Helper.Employees(gr, sp);
+        }
+
+        private void AddVacancy_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddNewVacancy(repository, employer));
+        }
+
+        private void SeeResumes_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Resumes(repository, employer));
+        }
     }
 }

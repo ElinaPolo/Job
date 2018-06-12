@@ -8,7 +8,38 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EmployeeAccountPage">
 
-    <Grid>
-        
+    <Grid Background="AliceBlue" Margin="7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="DefSpecialization" Grid.Row="1" Grid.Column="2" Height="30" Margin="5" Background="DarkGray" >Only your specialization</Button>
+        <DataGrid Name="DataGridResult" Grid.Row="2" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*" Header="Vacancy name" Binding="{Binding VacancyName}" />
+                <DataGridTextColumn Width="1*" Header="Range of salary" Binding="{Binding Salary}"/>
+                <DataGridTextColumn Width="1*" Header="Address" Binding="{Binding Address}"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Contact person: "/>
+                        <TextBlock Text="{Binding Path=ContactPerson}"/>
+                        <TextBlock Text=", "/>
+                        <TextBlock Text="{Binding Path=Number}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+
     </Grid>
+
 </Page>

@@ -27,7 +27,8 @@ namespace Team_Project
         {
             InitializeComponent();
             repository = r;
-            employer = e;
+            employer = e;         
+            comboBoxSpecialization.ItemsSource = repository.specializations;
         }
 
 
