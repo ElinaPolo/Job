@@ -10,7 +10,6 @@ namespace Job.Classes.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "Job.Classes.Context";
         }
 
         protected override void Seed(Job.Classes.Context context)
