@@ -9,6 +9,7 @@ namespace Job.Classes
     public class Resume
     {       
         public int Id { get; set; }
+        public bool Sd { get; set; }
         public Employee Employee { get; set; }
         public int Age { get; set; }
         public string Commentary { get; set; }  

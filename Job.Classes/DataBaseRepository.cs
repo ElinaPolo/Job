@@ -19,7 +19,7 @@ namespace Job.Classes
             grades = GetGrades();
             specializations = GetSpecializations();
         }
-               
+
         public void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade, DateTime birthdate)
         {
             using (var context = new Context())
@@ -137,5 +137,33 @@ namespace Job.Classes
                 context.SaveChanges();
             }
         }
+        public void resume(Employer employer, Resume resume)
+        {
+            using (var context = new Context())
+            {
+                bool q = true;
+                if (employer.Employees == null)
+                {
+                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees = new List<Employee>();
+                }
+                foreach (var c in context.Employer_)
+                {
+                    if (c.Id == employer.Id)
+                        context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee.Work = q;
+                }
+                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees.Add(context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee);
+                context.SaveChanges();
+            }
+
+        }
+        public List<Employee> Employees(Employer employer)
+            {
+            using (var context=new Context())
+            {
+                return context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees.ToList();
+            }
+
+        }
     }
 }
+

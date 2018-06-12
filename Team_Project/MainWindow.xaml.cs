@@ -26,6 +26,7 @@ namespace Team_Project
         public MainWindow()
         {
             InitializeComponent();
+
             FirstWindow.Navigate(new Welcome());
             using (var context = new Context())
             {

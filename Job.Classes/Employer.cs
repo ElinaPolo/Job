@@ -11,8 +11,10 @@ namespace Job.Classes
     {
         public int Id { get; set; }
         public string NameOfTheCompany { get; set; }
+        public bool StayOnline { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public List<Employee> Employees { get; set; }
         public List<Vacancy> Vacancies { get; set; }
         public List<Resume> Resumes { get; set; }
         public static Employer Sign(string login, string password)
