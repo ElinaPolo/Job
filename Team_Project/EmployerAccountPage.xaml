@@ -29,6 +29,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="Name" />
                 <DataGridTextColumn Width="1*" Header="Education"/>
+                <DataGridTextColumn Width="1*" Header="Specialization"/>
             </DataGrid.Columns>
         </DataGrid>
         
