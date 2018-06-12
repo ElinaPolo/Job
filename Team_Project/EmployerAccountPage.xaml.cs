@@ -31,6 +31,10 @@ namespace Team_Project
             repository.ReadData();
             ComboBoxGrades.ItemsSource = repository.grades;
             ComboBoxSpecializations.ItemsSource = repository.specializations;
+            DataGridResult.ItemsSource = null;
+            var gr = ComboBoxGrades.SelectedItem as Grades;
+            var sp = ComboBoxSpecializations.SelectedItem as Specialization;
+            DataGridResult.ItemsSource = Helper.Employees(gr, sp);
         }
     }
 }
