@@ -21,7 +21,7 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid Name="dataGridStations" Grid.Row="1" Grid.ColumnSpan="2" Margin="5"
+        <DataGrid Name="DataGridResume" Grid.Row="1" Grid.ColumnSpan="2" Margin="5"
                   AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Name" Binding="{Binding }"/>
@@ -29,14 +29,13 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="2">
-            <Button Width="100" Margin="0,5,5,5" Click="ButtonAddResume_Click" HorizontalAlignment="Right">Add</Button>
-            <Button Width="100" Margin="5" Click="ButtonRemoveResume_Click">Remove</Button>
+            <Button Width="100" Margin="5" Click="ButtonAddResume_Click">Add</Button>
+            <Button Width="100" Margin="5" Click="ButtonCancelResume_Click">Cancel</Button>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top">
 
-            <Button Width="100" Margin="5" Click="ButtonOk_Click">Ok</Button>
-            <Button Width="100" Margin="5" Click="ButtonCancel_Click">Cancel</Button>
+            
         </StackPanel>
     </Grid>
 </Page>

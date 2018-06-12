@@ -20,6 +20,7 @@ namespace Job.Classes
         List<Specialization> GetSpecializations();
         void ReadData();
         void ReadVacancies();
+        void ReadEmployers();
         Resume AddResume(Employee employee, string commentary);
         void SendResume(Employer employer, Employee employee, Resume resume);
         List<Vacancy> GetVacancies();

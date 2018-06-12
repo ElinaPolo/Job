@@ -21,6 +21,10 @@ namespace Job.Classes
             specializations = GetSpecializations();
          
         }
+        public void ReadEmployers()
+        {
+            employer = GetEmployers();
+        }
         public void ReadVacancies()
         {
             vacancies = GetVacancies();
@@ -119,6 +123,14 @@ namespace Job.Classes
                 age--;
             return age;
         }
+        public List<Employer> GetEmployers()
+        {
+
+            using (var context = new Context())
+            {
+                return context.Employer_.Include("Resumes").ToList();
+            }
+        }
         public List<Grades> GetGrades()
         {
             using (var context = new Context())
@@ -130,7 +142,7 @@ namespace Job.Classes
         {
             using (var context = new Context())
             {
-                return context.Vacancy_.ToList();
+                return context.Vacancy_.Include("Employer").ToList();
             }
         }
         public List<Specialization> GetSpecializations()
@@ -146,8 +158,8 @@ namespace Job.Classes
             {
                 if (employer.Resumes == null)
                     context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
-                var m = context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes.FirstOrDefault(x => x.Id == resume.Id);
-                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes.Add(m);
+                //var m = context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes.FirstOrDefault(x => x.Id == resume.Id);
+                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes.Add(resume);
                 context.SaveChanges();
             }
         }

@@ -28,10 +28,11 @@ namespace Team_Project
             InitializeComponent();
             repository = r;
             employer = e;
-            repository.ReadData();
+            repository.ReadEmployers();
+            DataGridResume.ItemsSource = repository.employer.FirstOrDefault(x => x.Login == e.Login).Resumes.ToList(); 
         }
 
-        private void ButtonRemoveResume_Click(object sender, RoutedEventArgs e)
+        private void ButtonCancelResume_Click(object sender, RoutedEventArgs e)
         {
 
         }
