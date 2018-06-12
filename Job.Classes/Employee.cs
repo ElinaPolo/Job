@@ -25,7 +25,7 @@ namespace Job.Classes
             {
 
                 var sign = new Employee();
-                sign = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == DataBaseRepository.GetHash(password));
+                sign = context.Employee_.FirstOrDefault(m => m.Login == login && m.Password == password);
                 return sign;
             }
         }

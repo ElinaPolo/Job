@@ -46,7 +46,7 @@ namespace Team_Project
                 MessageBox.Show("Please, enter your password");
             if (ifemployer == true)
             {
-                var t = Employer.Sign(textBoxLogin.Text, PasswordBox.Password);
+                var t = Employer.Sign(textBoxLogin.Text, DataBaseRepository.GetHash(PasswordBox.Password));
                 if (t != null)
                     NavigationService.Navigate(new EmployerAccountPage(repository, t));
                 else
@@ -54,7 +54,7 @@ namespace Team_Project
             }
             else
             {
-                var t = Employee.Sign(textBoxLogin.Text, PasswordBox.Password);
+                var t = Employee.Sign(textBoxLogin.Text, DataBaseRepository.GetHash(PasswordBox.Password));
                 if (t != null)
                     NavigationService.Navigate(new EmployeeAccountPage(repository, t));
                 else

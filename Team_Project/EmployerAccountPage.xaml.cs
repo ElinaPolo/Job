@@ -28,8 +28,9 @@ namespace Team_Project
             InitializeComponent();
             repository = r;
             employer = e;
-            // ComboBoxGrades.ItemsSource = repository.Grades;
-           // ComboBoxSpecializations.ItemsSource = repository.Specialization;
+            repository.ReadData();
+            ComboBoxGrades.ItemsSource = repository.grades;
+            ComboBoxSpecializations.ItemsSource = repository.specializations;
         }
     }
 }
