@@ -37,8 +37,15 @@ namespace Team_Project
         private void DefSpecialization_Click(object sender, RoutedEventArgs e)
         {
             DataGridResult.ItemsSource = null;
-            DataGridResult.ItemsSource = repository.Vacancies;
+            DataGridResult.ItemsSource =Helper.Vacancies(employee.Specializations) ;
+        }
+
+        private void AddResume_Click(object sender, RoutedEventArgs e)
+        {
+            var v = DataGridResult.SelectedItem as Vacancy;
+            var employer = v.Employer;
+            NavigationService.Navigate(new AddNewResumePage(repository, employee, employer));
         }
     }
-    }
+    
 }

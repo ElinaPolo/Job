@@ -39,7 +39,7 @@ namespace Job.Classes
             }
             return emp;
         }
-        public List<Vacancy> Vacancies(Specialization specialization)
+        public static List<Vacancy> Vacancies(Specialization specialization)
         {
             var vacancy = new List<Vacancy>();
             using (var context = new Context())
