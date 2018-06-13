@@ -29,12 +29,14 @@ namespace Team_Project
             repository = r;
             employer = e;
             repository.ReadData();
+            repository.GetEmployees();
             ComboBoxGrades.ItemsSource = repository.grades;
             ComboBoxSpecializations.ItemsSource = repository.specializations;
             DataGridResult.ItemsSource = null;
             var gr = ComboBoxGrades.SelectedItem as Grades;
             var sp = ComboBoxSpecializations.SelectedItem as Specialization;
-            DataGridResult.ItemsSource = Helper.Employees(gr, sp);
+            DataGridResult.ItemsSource = repository.employee;
+                
         }
 
         private void ComboBoxSpecializations_SelectionChanged(object sender, SelectionChangedEventArgs e)

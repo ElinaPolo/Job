@@ -24,18 +24,20 @@ namespace Team_Project
         private IRepository repository;
         private Employer employer;
         private Employee employee;
-        public AddNewResumePage(IRepository r,Employee e, Employer er)
+        private Vacancy vacancy;
+        public AddNewResumePage(IRepository r,Employee e, Employer er, Vacancy vac)
         {
             InitializeComponent();
             repository = r;
             employee = e;
             employer = er;
+            vacancy = vac;
         }
 
         private void Send_Click(object sender, RoutedEventArgs e)
         {
-            var r = repository.AddResume(employee, textBoxComment.Text);
-            repository.SendResume(employer, employee, r);
+            repository.AddResume(employee, textBoxComment.Text, vacancy,employer);
+          //  repository.SendResume(employer, employee, r);
             NavigationService.Navigate(new EmployeeAccountPage(repository, employee));
         }
 

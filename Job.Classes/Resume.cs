@@ -1,4 +1,4 @@
-﻿ using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +14,6 @@ namespace Job.Classes
         public int Age { get; set; }
         public string Commentary { get; set; }  
         public Employer Employer { get; set; }
+        public Vacancy Vacancy { get; set; }
     }
 }

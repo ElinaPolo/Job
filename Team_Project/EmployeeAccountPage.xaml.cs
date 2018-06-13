@@ -32,6 +32,7 @@ namespace Team_Project
             repository.ReadVacancies();
             DataGridResult.ItemsSource = null;
             DataGridResult.ItemsSource = repository.vacancies;
+
         }
 
         private void DefSpecialization_Click(object sender, RoutedEventArgs e)
@@ -44,7 +45,12 @@ namespace Team_Project
         {
             var v = DataGridResult.SelectedItem as Vacancy;
             var employer = v.Employer;
-            NavigationService.Navigate(new AddNewResumePage(repository, employee, employer));
+            NavigationService.Navigate(new AddNewResumePage(repository, employee, employer,v));
+        }
+
+        private void Invitations_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EmployeeInvitations(repository,employee));
         }
     }
     

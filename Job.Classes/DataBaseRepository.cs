@@ -14,12 +14,21 @@ namespace Job.Classes
         public List<Grades> grades { get; set; }
         public List<Vacancy> vacancies { get; set; }
         public List<Specialization> specializations { get; set; }
+        public List<Invitation> invitations { get; set; }
         public DataBaseRepository() { }
         public void ReadData()
         {
             grades = GetGrades();
             specializations = GetSpecializations();
          
+        }
+        public List<Employee> GetEmployees()
+        {
+            using (var context = new Context())
+            {
+                employee = context.Employee_.ToList();
+                return employee;
+             }       
         }
         public void ReadEmployers()
         {
@@ -88,7 +97,7 @@ namespace Job.Classes
             }
 
         }
-        public Resume AddResume(Employee employee, string commentary)
+        public Resume AddResume(Employee employee, string commentary,Vacancy vacancy, Employer employer)
         {
             using (var context = new Context())
             {
@@ -96,13 +105,12 @@ namespace Job.Classes
                 {
                     Employee = context.Employee_.FirstOrDefault(x => x.Login == employee.Login),
                     Age = GetAge(employee),
-                    Commentary = commentary
+                    Commentary = commentary,
+                    Vacancy=context.Vacancy_.FirstOrDefault(x=>x.Id==vacancy.Id)
                 };
-                if (employee.Resumes == null)
-                {
-                    context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes = new List<Resume>();
-                }
-                context.Resumes.Add(resume);
+                if (employer.Resumes == null)
+                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
+                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes.Add(resume);
                 context.SaveChanges();
                 return resume;
             }
@@ -128,7 +136,7 @@ namespace Job.Classes
 
             using (var context = new Context())
             {
-                return context.Employer_.Include("Resumes").ToList();
+                return context.Employer_.Include("Resumes.Vacancy").Include("Resumes.Employee.Grade").Include("Resumes.Employee.Specializations").ToList();
             }
         }
         public List<Grades> GetGrades()
@@ -158,38 +166,47 @@ namespace Job.Classes
             {
                 if (employer.Resumes == null)
                     context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes = new List<Resume>();
-                //var m = context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Resumes.FirstOrDefault(x => x.Id == resume.Id);
                 context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Resumes.Add(resume);
                 context.SaveChanges();
             }
         }
-        public void AcceptResume(Employer employer, Resume resume)
-        {
-            using (var context = new Context())
-            {
-                bool q = true;
-                if (employer.Employees_ == null)
-                {
-                    context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_ = new List<Employee>();
-                }
-                foreach (var c in context.Employer_)
-                {
-                    if (c.Id == employer.Id)
-                        context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee.Work = q;
-                }
-                context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_.Add(context.Resumes.FirstOrDefault(x => x.Id == resume.Id).Employee);
-                context.SaveChanges();
-            }
-
-        }
+        
+        
         public List<Employee> Employees(Employer employer)
-            {
+        {
             using (var context=new Context())
             {
                 return context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_.ToList();
             }
 
         }
+
+        public void SendInvitation(Employee employee, Vacancy vacancy,string comment)
+        {
+            using (var context = new Context())
+            {
+                var invitation = new Invitation()
+                {
+                    Employee_ = context.Employee_.FirstOrDefault(x => x.Login == employee.Login),
+                    Vacancy = context.Vacancy_.FirstOrDefault(m => m.Id == vacancy.Id),
+                    Interview = comment
+                };
+                if (employee.Invitations == null)
+                    context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Invitations = new List<Invitation>();
+                context.Employee_.FirstOrDefault(x => x.Login == employee.Login).Invitations.Add(invitation);
+                context.SaveChanges();
+            }
+        }
+        public List<Invitation> GetInvitations(Employee employee)
+        {
+            using (var context = new Context())
+            {
+                var u = context.Invitations_.Include("Employee_").Include("Vacancy").ToList();
+                invitations = u;
+                return invitations;
+            }
+        }
+            
     }
 }
 

@@ -56,6 +56,16 @@ namespace Job.Classes
             }
             return vacancy;
         }
+        public static List<Invitation> EmployeeInvitations(Employee employee,List<Invitation> invitations)
+        {
+            var h = new List<Invitation>();
+            foreach (var i in invitations)
+            {
+                if (i.Employee_.Login == employee.Login)
+                    h.Add(i);
+            }
+            return h;
+        }
       
     }  
 }

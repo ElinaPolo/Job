@@ -56,6 +56,7 @@
     <Compile Include="Employer.cs" />
     <Compile Include="Grades.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Invitation.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

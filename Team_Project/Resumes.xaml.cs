@@ -29,17 +29,15 @@ namespace Team_Project
             repository = r;
             employer = e;
             repository.ReadEmployers();
-            DataGridResume.ItemsSource = repository.employer.FirstOrDefault(x => x.Login == e.Login).Resumes.ToList(); 
+            var s = repository.employer.FirstOrDefault(x => x.Login == e.Login).Resumes.ToList();
+            DataGridResult.ItemsSource = s; 
         }
 
-        private void ButtonCancelResume_Click(object sender, RoutedEventArgs e)
+        private void Accept_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonAddResume_Click(object sender, RoutedEventArgs e)
-        {
-
+            var r = DataGridResult.SelectedItem as Resume;
+            var ee = r.Employee;
+            repository.SendInvitation(ee, r.Vacancy, null);
         }
     }
 }

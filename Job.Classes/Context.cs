@@ -21,6 +21,7 @@ namespace Job.Classes
         public DbSet<Vacancy> Vacancy_ { get; set; }
         public DbSet<Grades> Grade_ { get; set; }
         public DbSet<Resume> Resumes { get; set; }
+        public DbSet<Invitation> Invitations_ { get; set; }
     }
     public class Initializer : CreateDatabaseIfNotExists<Context>
     {
