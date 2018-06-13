@@ -5,10 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Team_Project"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="400"
+      d:DesignHeight="550" d:DesignWidth="400"
       Title="AddNewEmployee">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/rose.jpg"></ImageBrush>
+    </Page.Background>
 
-    <Grid Margin="5" Width="Auto" Height="Auto" Background="GhostWhite">
+    <Grid Margin="5" Width="Auto" Height="Auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -28,34 +31,34 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock VerticalAlignment="Center"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">Fill in the following details</TextBlock>
-        <TextBlock VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0">Full name</TextBlock>
+        <TextBlock VerticalAlignment="Center"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontFamily="Showcard Gothic" FontSize="18">My profile</TextBlock>
+        <TextBlock VerticalAlignment="Center"  Grid.Row="1" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Full name</TextBlock>
         <TextBox Name="textBoxFullname" Grid.ColumnSpan="3"  Grid.Row="1" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
-        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">Education</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Education</TextBlock>
         <TextBox Name="textBoxEducation" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
-        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">Grade</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Grade</TextBlock>
         <ComboBox Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Grade" ></ComboBox>
 
-        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">Specialization</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Specialization</TextBlock>
         <ComboBox Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Name" ></ComboBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Height="20" Margin="5">Year(1990)</TextBlock>
-        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5">Month(11)</TextBlock>
-        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5">Day(11)</TextBlock>
-        <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">BirthDate</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Height="20" Margin="5" FontFamily="Showcard Gothic">Year(1990)</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5" FontFamily="Showcard Gothic">Month(11)</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5" FontFamily="Showcard Gothic">Day(11)</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="6" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">BirthDate</TextBlock>
         <TextBox Name="textBoxYear" Grid.Row="6" Grid.Column="1" Margin="5" Height="20" ></TextBox>
         <TextBox Name="textBoxMonth" Grid.Row="6" Grid.Column="2" Margin="5" Height="20" ></TextBox>
         <TextBox Name="textBoxDay" Grid.Row="6" Grid.Column="3" Margin="5" Height="20" ></TextBox>
 
-        <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">Login</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="7" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Login</TextBlock>
         <TextBox Name="textBoxLogin" Grid.Row="7" Grid.ColumnSpan="3" Grid.Column="1" Margin="5" Height="20" ></TextBox>
-        <TextBlock VerticalAlignment="Center" Grid.Row="8" Grid.Column="0">Password</TextBlock>
+        <TextBlock VerticalAlignment="Center" Grid.Row="8" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Password</TextBlock>
         <TextBox Name="textBoxPassword" Grid.ColumnSpan="3" Grid.Row="8" Grid.Column="1" Margin="5" Height="20" Visibility="Hidden"></TextBox>
         <PasswordBox Name="PasswordBox" Grid.ColumnSpan="3" Grid.Row="8" Grid.Column="1" Margin="5" Height="20" PasswordChar="*" ></PasswordBox>
         <StackPanel Orientation="Horizontal" Grid.Row="9" Grid.ColumnSpan="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Margin="0 10 0 0">
-            <Button Width="Auto" Margin="5" Background="DarkGray" Click="Register_Click"  >Register</Button>
-            <Button Width="Auto" Margin="5" Background="DarkGray" Click="Cancel_Click"  >Cancel</Button>
+            <Button Width="Auto" Margin="5" Background="AliceBlue"  Click="Register_Click" FontFamily="Showcard Gothic" FontSize="14"  >Register</Button>
+            <Button Width="Auto" Margin="5" Background="AliceBlue"  Click="Cancel_Click" FontFamily="Showcard Gothic" FontSize="14"  >Cancel</Button>
         </StackPanel>
     </Grid>
 </Page>

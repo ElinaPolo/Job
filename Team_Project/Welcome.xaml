@@ -7,19 +7,22 @@
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="350"
       Title="Welcome">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/rose.jpg"></ImageBrush>
+    </Page.Background>
 
-    <Grid Background="GhostWhite">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             
         </Grid.RowDefinitions>
-        <TextBlock VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Text="Who are you?" FontFamily="AR DARLING"  ></TextBlock>
+        <TextBlock Name="Who" Margin="10" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Text="Who are you?" FontFamily="Broadway" FontSize="20"  ></TextBlock>
                 <StackPanel Orientation="Horizontal" Grid.Row="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"
                     Margin="0 10 0 0"
                     >
-            <Button Name="EmployerButton" Click="EmployerButton_Click" Width="Auto"  Margin="5"  Background="DarkGray" >Employer</Button>
-            <Button Name="EmployeeButton" Click="EmployeeButton_Click" Width="Auto"  Margin="5"  Background="DarkGray">Employee</Button>
+            <Button Name="EmployerButton" Click="EmployerButton_Click" Width="Auto"  Margin="5"  Background="AliceBlue" FontFamily="Showcard Gothic" >Employer</Button>
+            <Button Name="EmployeeButton" Click="EmployeeButton_Click" Width="Auto"  Margin="5"  Background="AliceBlue" FontFamily="Showcard Gothic">Employee</Button>
         </StackPanel>
     </Grid>
 </Page>

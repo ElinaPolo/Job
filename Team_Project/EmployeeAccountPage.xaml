@@ -7,8 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EmployeeAccountPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/rose.jpg"></ImageBrush>
+    </Page.Background>
 
-    <Grid Background="AliceBlue" Margin="7">
+    <Grid  Margin="7">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -22,10 +25,10 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="DefSpecialization" Grid.Row="1" Grid.Column="2" Height="30" Margin="5" Background="DarkGray" >Only your specialization</Button>
-        <Button Name="AddResume" Grid.Row="1" Grid.Column="0" Height="30" Margin="5" Background="DarkGray" Click="AddResume_Click">Choose a vacancy and send a resume</Button>
-        <Button Name="Invitations" Grid.Row="1" Grid.Column="1" Height="30" Margin="5" Background="DarkGray" Click="Invitations_Click">My invitations</Button>
-        <DataGrid Name="DataGridResult" Grid.Row="2" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" >
+        <Button Name="DefSpecialization" Grid.Row="1" Grid.Column="2" Height="30" Margin="5" Background="AliceBlue"  FontFamily="Showcard Gothic" >Only your specialization</Button>
+        <Button Name="AddResume" Grid.Row="1" Grid.Column="0" Height="30" Margin="5" Background="AliceBlue"  Click="AddResume_Click" FontFamily="Showcard Gothic">Choose a vacancy and send a resume</Button>
+        <Button Name="Invitations" Grid.Row="1" Grid.Column="1" Height="30" Margin="5" Background="AliceBlue"  Click="Invitations_Click" FontFamily="Showcard Gothic">My invitations</Button>
+        <DataGrid Name="DataGridResult" Grid.Row="2" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" FontFamily="Showcard Gothic" >
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="Vacancy name" Binding="{Binding VacancyName}" />
                 <DataGridTextColumn Width="1*" Header="Range of salary" Binding="{Binding Salary}"/>

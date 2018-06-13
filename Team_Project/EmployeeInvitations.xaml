@@ -7,8 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EmployeeInvitations">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/blue.jpg"></ImageBrush>
+    </Page.Background>
     <Grid>
-        <Grid Margin="5" Background="GhostWhite">
+        <Grid Margin="5" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
@@ -21,7 +24,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid Background="GhostWhite" Name="DataGridResult" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" >
+            <DataGrid  Name="DataGridResult" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" FontFamily="Showcard Gothic" FontSize="14" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="1*" Header="Vacancy name" Binding="{Binding Vacancy.VacancyName}" />
                     <DataGridTextColumn Width="1*" Header="Address" Binding="{Binding Vacancy.Address}"/>
@@ -36,8 +39,8 @@
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
-                <Button Name="Cancel" Width="100" Margin="5" Background="DarkGray" >Cancel</Button>
-                <Button Name="Remove" Width="100" Margin="5" Background="DarkGray">Remove</Button>
+                <Button Name="Cancel" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" >Cancel</Button>
+                <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic">Remove</Button>
             </StackPanel>
         </Grid>
     </Grid>

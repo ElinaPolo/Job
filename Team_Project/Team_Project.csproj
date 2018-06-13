@@ -180,5 +180,14 @@
       <Name>Job.Classes</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rose.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blue.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
