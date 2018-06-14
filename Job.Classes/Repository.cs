@@ -16,31 +16,7 @@ namespace Job.Classes
 
         public Repository()
         {
-           // List<Grades> gr = new List<Grades>()
-           // {
-           //     new Grades("Primary"),
-           //     new Grades("Lower Secondary "),
-           //     new Grades("Upper Secondary"),
-           //     new Grades("Post-secondary"),
-           //     new Grades("Bachelor"),
-           //     new Grades("Master"),
-           //     new Grades("Doctoral")
-           // };
-           // SaveList("grades.json",gr);
-           // List<Specialization> ss = new List<Specialization>()
-           //{
-           //    new Specialization("It"),
-           //    new Specialization("Hr"),
-           //    new Specialization("Top Management"),
-           //    new Specialization("Economics"),
-           //    new Specialization("Design"),
-           //    new Specialization("Mass Media"),
-           //    new Specialization("Security"),
-           //    new Specialization("Jurisprudence")
-           //};
-           // SaveList("spez.json", ss);
-           // spez = RestoreList<Specialization>("spez.json");
-           // grade = RestoreList<Grades>("grades.json");
+           
         }
 
         public static void SaveList<T>(string fileName, List<T> list)
