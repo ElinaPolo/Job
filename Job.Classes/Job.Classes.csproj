@@ -58,6 +58,10 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Invitation.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201806142033583_good.cs" />
+    <Compile Include="Migrations\201806142033583_good.Designer.cs">
+      <DependentUpon>201806142033583_good.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -69,6 +73,11 @@
     <None Include="grades.json" />
     <None Include="packages.config" />
     <None Include="spez.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806142033583_good.resx">
+      <DependentUpon>201806142033583_good.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
