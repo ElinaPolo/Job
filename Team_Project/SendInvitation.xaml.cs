@@ -42,7 +42,7 @@ namespace Team_Project
         {
             var ee = resume.Employee;        
             repository.SendInvitation(ee, resume.Vacancy, textBoxComment.Text);
-
+            NavigationService.Navigate(new Resumes(repository, employer));
         }
     }
 }

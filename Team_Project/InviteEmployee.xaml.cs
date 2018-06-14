@@ -45,6 +45,7 @@ namespace Team_Project
             if(Vacancies.SelectedItem!=null)
             {
                 repository.SendInvitation(employee, Vacancies.SelectedItem as Vacancy, textBoxComment.Text);
+                NavigationService.Navigate(new EmployerAccountPage(repository, employer));
             }
             else
             {

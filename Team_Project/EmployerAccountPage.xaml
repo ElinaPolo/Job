@@ -39,7 +39,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="Name" Binding="{Binding Name}" />
                 <DataGridTextColumn Width="1*" Header="Education" Binding="{Binding Education}"/>
-                <DataGridTextColumn Width="1*" Header="Age" Binding="{Binding BirthDate}"/>
+                <DataGridTextColumn Width="1*" Header="Specialization" Binding="{Binding Specializations.Name}"/>
             </DataGrid.Columns>
         </DataGrid>
 

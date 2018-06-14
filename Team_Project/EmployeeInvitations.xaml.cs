@@ -21,6 +21,8 @@ namespace Team_Project
     /// </summary>
     public partial class EmployeeInvitations : Page
     {
+
+
         private IRepository repository;
         private Employee employee;
         public EmployeeInvitations(IRepository r, Employee e)
@@ -37,8 +39,17 @@ namespace Team_Project
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             var g = DataGridResult.SelectedItem as Invitation;
-            repository.DeleteInvitation(employee, g);
-            NavigationService.Navigate(new EmployeeInvitations(repository, employee));
+            if (g != null)
+            {
+                repository.DeleteInvitation(employee, g);
+                NavigationService.Navigate(new EmployeeInvitations(repository, employee));
+            }
+            else { MessageBox.Show("Choose an invitation!"); }
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EmployeeAccountPage(repository, employee));
         }
     }
 }

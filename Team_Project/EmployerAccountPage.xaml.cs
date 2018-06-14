@@ -35,8 +35,7 @@ namespace Team_Project
             DataGridResult.ItemsSource = null;
             var gr = ComboBoxGrades.SelectedItem as Grades;
             var sp = ComboBoxSpecializations.SelectedItem as Specialization;
-            DataGridResult.ItemsSource = repository.employee;
-                
+            DataGridResult.ItemsSource = repository.employee;               
         }
 
         private void ComboBoxSpecializations_SelectionChanged(object sender, SelectionChangedEventArgs e)

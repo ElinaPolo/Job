@@ -24,7 +24,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <DataGrid  Name="DataGridResult" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" FontFamily="Showcard Gothic" FontSize="14" >
+            <DataGrid Name="DataGridResult" Grid.Row="1" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" FontFamily="Showcard Gothic" FontSize="14" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="1*" Header="Vacancy name" Binding="{Binding Vacancy.VacancyName}" />
                     <DataGridTextColumn Width="1*" Header="Address" Binding="{Binding Vacancy.Address}"/>
@@ -44,7 +44,7 @@
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
-                <Button Name="Cancel" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" >Cancel</Button>
+                <Button Name="Cancel" Width="100" Margin="5,0,5,5" Background="AliceBlue" FontFamily="Showcard Gothic" Height="20" VerticalAlignment="Bottom" Click="Cancel_Click" >Cancel</Button>
                 <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" Click="Remove_Click">Remove</Button>
             </StackPanel>
         </Grid>

@@ -21,6 +21,7 @@ namespace Team_Project
     /// </summary>
     public partial class AddNewEmployee : Page
     {
+       
         private IRepository repository;
         public AddNewEmployee(IRepository r)
         {
@@ -33,48 +34,33 @@ namespace Team_Project
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            if (textBoxYear.Text != "" && textBoxMonth.Text != "" && textBoxDay.Text != "")
+            if (textBoxFullname.Text != "" && textBoxLogin.Text != "" && PasswordBox.Password != null && textBoxEducation.Text != "" && comboBoxGrade.SelectedItem != null && comboBoxSpecialization.SelectedItem != null && Birthdate.SelectedDate != null)
             {
-                var y = int.Parse(textBoxYear.Text);
-                var m = int.Parse(textBoxMonth.Text);
-                var d = int.Parse(textBoxDay.Text);
-                if (m > 0 && m <= 12 && d > 0 && d <= 31)
+                bool clush = false;
+                repository.ReadEmployees();
+                foreach (var r in repository.employee)
                 {
-                    var date = new DateTime(y, m, d);
-                    if (textBoxFullname.Text != "" && textBoxLogin.Text != "" && PasswordBox.Password != null && textBoxEducation.Text != "" && comboBoxGrade.SelectedItem != null && comboBoxSpecialization.SelectedItem != null)
+                    if (textBoxLogin.Text == r.Login)
                     {
-                        bool clush = false;
-                        repository.ReadEmployees();
-                        foreach(var r in repository.employee)
-                        {
-                            if(textBoxLogin.Text==r.Login)
-                            {
-                                MessageBox.Show("Create another login!");
-                                clush = true;
-                            }
-                        }
-                        if (clush == false)
-                        {
-                            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades, date);
-                            NavigationService.Navigate(new LoginPage(repository, false));
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please, fill all information!");
+                        MessageBox.Show("Create another login!");
+                        clush = true;
                     }
                 }
-                else
-                { MessageBox.Show("Check your birtdate!"); }
+                if (clush == false)
+                {
+                    repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades, Birthdate.SelectedDate.Value);
+                    NavigationService.Navigate(new LoginPage(repository, false));
+                }
             }
             else
-            { MessageBox.Show("Check your birtdate!"); }
-
+            {
+                MessageBox.Show("Please, fill all information!");
+            }
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-           NavigationService.Navigate(new LoginPage(repository,false));
+            NavigationService.Navigate(new LoginPage(repository, false));
         }
     }
 }
