@@ -16,7 +16,9 @@ namespace Job.Classes
 
         public Repository()
         {
-           
+          
+           spez = RestoreList<Specialization>("spez.json");
+            grade = RestoreList<Grades>("grades.json");
         }
 
         public static void SaveList<T>(string fileName, List<T> list)
