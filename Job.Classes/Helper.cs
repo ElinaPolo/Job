@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Job.Classes
 {
+
     public class Helper
     {
         public static List<Employee> Employees(Grades grade, Specialization specialization)
