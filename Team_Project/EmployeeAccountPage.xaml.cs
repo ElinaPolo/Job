@@ -45,14 +45,24 @@ namespace Team_Project
 
         private void AddResume_Click(object sender, RoutedEventArgs e)
         {
-            var v = DataGridResult.SelectedItem as Vacancy;
-            var employer = v.Employer;
-            NavigationService.Navigate(new AddNewResumePage(repository, employee, employer,v));
+            if (DataGridResult.SelectedItem != null)
+            {
+                var v = DataGridResult.SelectedItem as Vacancy;
+                var employer = v.Employer;
+                NavigationService.Navigate(new AddNewResumePage(repository, employee, employer, v));
+            }
+            else { MessageBox.Show("Choose a vacancy!"); }
         }
 
         private void Invitations_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new EmployeeInvitations(repository,employee));
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridResult.ItemsSource = null;
+            DataGridResult.ItemsSource = repository.vacancies;
         }
     }
     

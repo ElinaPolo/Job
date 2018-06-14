@@ -202,6 +202,40 @@ namespace Job.Classes
                 return invitations;
             }
         }
+        public void DeleteResume(Employer employer,Resume resume)
+        {
+            using (var context = new Context())
+            {
+                foreach (var c in context.Employer_.Include("Resumes"))
+                {
+                    if (employer.Login == c.Login)
+                    {
+                        c.Resumes.Remove(c.Resumes.FirstOrDefault(x => x.Id == resume.Id));
+                        
+                    }
+                }
+                var d = context.Resumes.FirstOrDefault(z => z.Id == resume.Id);
+                context.Resumes.Remove(d);
+                context.SaveChanges();
+            }
+            
+        }
+        public void DeleteInvitation(Employee employee, Invitation invitation)
+        {
+            using (var context = new Context())
+            {
+                foreach(var c in context.Employee_.Include("Invitations"))
+                {
+                    if(employee.Login==c.Login)
+                    {
+                        c.Invitations.Remove(c.Invitations.FirstOrDefault(x => x.Id == invitation.Id));
+                    }
+                }
+                var e = context.Invitations_.FirstOrDefault(z => z.Id == invitation.Id);
+                context.Invitations_.Remove(e);
+                context.SaveChanges();
+            }
+        }
             
     }
 }

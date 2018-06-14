@@ -45,8 +45,8 @@
             </DataGrid>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
                 <Button Name="Accept" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Accept_Click" >Accept</Button>
-                <Button Name="Cancel" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" >Cancel</Button>
-                <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14">Remove</Button>
+                <Button Name="Cancel" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Cancel_Click" >Cancel</Button>
+                <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Remove_Click">Remove</Button>
             </StackPanel>
         </Grid>
     </Grid>

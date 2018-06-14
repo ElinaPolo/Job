@@ -34,5 +34,11 @@ namespace Team_Project
             DataGridResult.ItemsSource = Helper.EmployeeInvitations(employee, repository.invitations);
         }
 
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            var g = DataGridResult.SelectedItem as Invitation;
+            repository.DeleteInvitation(employee, g);
+            NavigationService.Navigate(new EmployeeInvitations(repository, employee));
+        }
     }
 }

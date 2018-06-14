@@ -25,13 +25,16 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="Resumes" Grid.Row="0" Grid.Column="0" Height="30" Margin="5" Background="AliceBlue"  Click="SeeResumes_Click" FontFamily="Showcard Gothic" FontSize="14">Resumes</Button>
-        <Button Name="AddVacancy" Grid.Row="0" Grid.Column="1" Height="30" Margin="5" Background="AliceBlue"  Click="AddVacancy_Click" FontFamily="Showcard Gothic" FontSize="14">Add new vacancy</Button>
-        <Button Name="Invite" Grid.Row="0" Grid.Column="2" Height="30" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Invite_Click">Invite to intervew</Button>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="4" HorizontalAlignment="Center"  Margin="5" Orientation="Horizontal">
+        <Button Name="Resumes" Height="30" Margin="5" Background="AliceBlue"  Click="SeeResumes_Click" FontFamily="Showcard Gothic" FontSize="14">Resumes</Button>
+        <Button Name="AddVacancy"  Height="30" Margin="5" Background="AliceBlue"  Click="AddVacancy_Click" FontFamily="Showcard Gothic" FontSize="14">Add new vacancy</Button>
+        <Button Name="Invite"  Height="30" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Invite_Click">Invite to intervew</Button>
+            <Button Name="Refresh" Height="30" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" FontSize="14" Click="Refresh_Click">Refresh</Button>
+        </StackPanel>
         <TextBlock VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Height="20" Margin="5" FontFamily="Showcard Gothic" FontSize="14">Required grade</TextBlock>
-        <ComboBox Name="ComboBoxGrades" Grid.Row="2" Grid.Column="1" Margin="3" Background="FloralWhite"  SelectionChanged="ComboBoxGrades_SelectionChanged"  DisplayMemberPath="Grade"/>
+        <ComboBox FontFamily="Showcard Gothic" Name="ComboBoxGrades" Grid.Row="2" Grid.Column="1" Margin="3" Background="FloralWhite"  SelectionChanged="ComboBoxGrades_SelectionChanged"  DisplayMemberPath="Grade"/>
         <TextBlock FontFamily="Showcard Gothic" FontSize="14" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Height="20" Margin="5">Required specialization</TextBlock>
-        <ComboBox Name="ComboBoxSpecializations" Grid.Row="2" Grid.Column="0" Margin="3" Background="FloralWhite" SelectionChanged="ComboBoxSpecializations_SelectionChanged" DisplayMemberPath="Name"/>
+        <ComboBox FontFamily="Showcard Gothic" Name="ComboBoxSpecializations" Grid.Row="2" Grid.Column="0" Margin="3" Background="FloralWhite" SelectionChanged="ComboBoxSpecializations_SelectionChanged" DisplayMemberPath="Name"/>
         <DataGrid FontFamily="Showcard Gothic" FontSize="14" Name="DataGridResult" Grid.Row="3" Grid.ColumnSpan="3" IsReadOnly="True" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="Name" Binding="{Binding Name}" />

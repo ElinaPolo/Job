@@ -39,10 +39,10 @@
         <TextBox Name="textBoxEducation" Grid.ColumnSpan="3" Grid.Row="2" Grid.Column="1" Height="20" Margin="5" ></TextBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Grade</TextBlock>
-        <ComboBox Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Grade" ></ComboBox>
+        <ComboBox FontFamily="Showcard Gothic" Name="comboBoxGrade" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Grade" ></ComboBox>
 
         <TextBlock VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" FontFamily="Showcard Gothic" FontSize="14">Specialization</TextBlock>
-        <ComboBox Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Name" ></ComboBox>
+        <ComboBox FontFamily="Showcard Gothic" Name="comboBoxSpecialization" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1" Height="20" Margin="5" DisplayMemberPath="Name" ></ComboBox>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="1" Height="20" Margin="5" FontFamily="Showcard Gothic">Year(1990)</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="2" Height="20" Margin="5" FontFamily="Showcard Gothic">Month(11)</TextBlock>
         <TextBlock VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="20" Margin="5" FontFamily="Showcard Gothic">Day(11)</TextBlock>

@@ -72,5 +72,11 @@ namespace Team_Project
             }
             else { MessageBox.Show("Choose employee!"); }
         }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridResult.ItemsSource = null;
+            DataGridResult.ItemsSource = repository.employee;
+        }
     }
 }

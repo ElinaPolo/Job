@@ -28,19 +28,24 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="1*" Header="Vacancy name" Binding="{Binding Vacancy.VacancyName}" />
                     <DataGridTextColumn Width="1*" Header="Address" Binding="{Binding Vacancy.Address}"/>
-                   
+                    <DataGridTextColumn Width="1*" Header="Salary" Binding="{Binding Vacancy.Salary}"/>
                 </DataGrid.Columns>
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Interview: "/>
                             <TextBlock Text="{Binding Path=Interview}"/>
+                            <TextBlock Text=", contact person: "/>
+                            <TextBlock Text="{Binding Path=Vacancy.ContactPerson}"/>
+                            <TextBlock Text=", contact : "/>
+                            <TextBlock Text="{Binding Path=Vacancy.Number}"/>
                         </StackPanel>
                     </DataTemplate>
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
                 <Button Name="Cancel" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" >Cancel</Button>
-                <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic">Remove</Button>
+                <Button Name="Remove" Width="100" Margin="5" Background="AliceBlue" FontFamily="Showcard Gothic" Click="Remove_Click">Remove</Button>
             </StackPanel>
         </Grid>
     </Grid>

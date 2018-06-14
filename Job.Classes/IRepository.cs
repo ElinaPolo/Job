@@ -29,5 +29,7 @@ namespace Job.Classes
         void SendResume(Employer employer, Employee employee, Resume resume);
         void SendInvitation(Employee employee, Vacancy vacancy, string comment);
         List<Vacancy> GetVacancies();
+        void DeleteResume(Employer employer, Resume resume);
+        void DeleteInvitation(Employee employee, Invitation invitation);
     }
 }

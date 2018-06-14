@@ -40,5 +40,17 @@ namespace Team_Project
             NavigationService.Navigate(new SendInvitation(repository, employer,r));
             repository.SendInvitation(ee, r.Vacancy, null);
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EmployerAccountPage(repository, employer));
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            var f= DataGridResult.SelectedItem as Resume;
+            repository.DeleteResume(employer,f);
+            NavigationService.Navigate(new Resumes(repository, employer));
+        }
     }
 }
