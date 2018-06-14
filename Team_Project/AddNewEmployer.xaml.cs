@@ -30,8 +30,29 @@ namespace Team_Project
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            repository.SaveEmployer(textBoxCompanyname.Text, textBoxLogin.Text, PasswordBox.Password);
-            NavigationService.Navigate(new LoginPage(repository, true));
+            if (textBoxCompanyname.Text !="" && textBoxLogin.Text != "" && PasswordBox.Password !="")
+            {
+                bool clush = false;
+                repository.ReadEmployers();
+                    foreach (var r in repository.employer)
+                    {
+                        if (r.Login == textBoxLogin.Text)
+                        {
+                            MessageBox.Show("Create another login!");
+                            clush = true;
+                        }
+                    }
+                    if (clush == false)
+                    {
+                        repository.SaveEmployer(textBoxCompanyname.Text, textBoxLogin.Text, PasswordBox.Password);
+                        NavigationService.Navigate(new LoginPage(repository, true));
+                    }
+                
+            }
+            else
+            {
+                MessageBox.Show("Please, fill all information!");
+            }
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

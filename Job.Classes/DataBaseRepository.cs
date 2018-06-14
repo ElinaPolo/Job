@@ -34,6 +34,10 @@ namespace Job.Classes
         {
             employer = GetEmployers();
         }
+        public void ReadEmployees()
+        {
+            employee = GetEmployees();
+        }
         public void ReadVacancies()
         {
             vacancies = GetVacancies();

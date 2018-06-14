@@ -181,9 +181,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\color.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\rose.jpg" />
   </ItemGroup>
   <ItemGroup>

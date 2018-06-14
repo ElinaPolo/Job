@@ -14,6 +14,7 @@ namespace Job.Classes
         List<Invitation> invitations { get; set; }
         List<Specialization> specializations { get; set; }
         List<Vacancy> vacancies { get; set; }
+        void ReadEmployees();
         void SaveEmployee(string name, string login, string password, string education, Specialization specialization, Grades grade, DateTime birthdate);
         void SaveEmployer(string nameofcompany, string login, string password);
         void AddVacancy(Employer employer, string vacancyname, string salary, string adress, string number, string contactperson, Specialization sp);

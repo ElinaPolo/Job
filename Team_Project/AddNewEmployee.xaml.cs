@@ -33,12 +33,43 @@ namespace Team_Project
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            var y = int.Parse(textBoxYear.Text);
-            var m = int.Parse(textBoxMonth.Text);
-            var d = int.Parse(textBoxDay.Text);
-            var date = new DateTime(y, m, d);
-            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades,date);
-            NavigationService.Navigate(new LoginPage(repository, false));
+            if (textBoxYear.Text != "" && textBoxMonth.Text != "" && textBoxDay.Text != "")
+            {
+                var y = int.Parse(textBoxYear.Text);
+                var m = int.Parse(textBoxMonth.Text);
+                var d = int.Parse(textBoxDay.Text);
+                if (m > 0 && m <= 12 && d > 0 && d <= 31)
+                {
+                    var date = new DateTime(y, m, d);
+                    if (textBoxFullname.Text != "" && textBoxLogin.Text != "" && PasswordBox.Password != null && textBoxEducation.Text != "" && comboBoxGrade.SelectedItem != null && comboBoxSpecialization.SelectedItem != null)
+                    {
+                        bool clush = false;
+                        repository.ReadEmployees();
+                        foreach(var r in repository.employee)
+                        {
+                            if(textBoxLogin.Text==r.Login)
+                            {
+                                MessageBox.Show("Create another login!");
+                                clush = true;
+                            }
+                        }
+                        if (clush == false)
+                        {
+                            repository.SaveEmployee(textBoxFullname.Text, textBoxLogin.Text, PasswordBox.Password, textBoxEducation.Text, comboBoxSpecialization.SelectedItem as Specialization, comboBoxGrade.SelectedItem as Grades, date);
+                            NavigationService.Navigate(new LoginPage(repository, false));
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please, fill all information!");
+                    }
+                }
+                else
+                { MessageBox.Show("Check your birtdate!"); }
+            }
+            else
+            { MessageBox.Show("Check your birtdate!"); }
+
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
