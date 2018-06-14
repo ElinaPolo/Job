@@ -24,16 +24,19 @@ namespace Job.Classes
                     }
                     else
                     if (grade != null)
+                    {
                         if (c.Grade.Id == grade.Id)
                             emp.Add(c);
-                        else
-                        if (specialization != null)
-                        {
-                            if (c.Specializations.Id == specialization.Id)
-                                emp.Add(c);
-                        }
-                        else
+                    }
+                    else
+                        
+                    if (specialization != null)
+                    {
+                        if (c.Specializations.Id == specialization.Id)
                             emp.Add(c);
+                    }
+                    else
+                        emp.Add(c);
                 }
 
             }
@@ -44,14 +47,13 @@ namespace Job.Classes
             var vacancy = new List<Vacancy>();
             using (var context = new Context())
             {
-                foreach (var m in context.Vacancy_)
+                foreach (var m in context.Vacancy_.Include("Specialization").Include("Employer"))
                 {
                     if (specialization != null)
                     {
                         if (m.Specialization.Id == specialization.Id)
                             vacancy.Add(m);
-                    }
-                    else vacancy.Add(m);
+                    }                  
                 }
             }
             return vacancy;
@@ -66,6 +68,15 @@ namespace Job.Classes
             }
             return h;
         }
-      
+      public static List<Vacancy> EmployerVacancies(Employer employer,List<Vacancy> vacancies)
+        {
+           var vac = new List<Vacancy>();
+            foreach (var c in vacancies)
+            {
+                if (employer.Login == c.Employer.Login)
+                    vac.Add(c);
+            }
+            return vac;
+        }
     }  
 }

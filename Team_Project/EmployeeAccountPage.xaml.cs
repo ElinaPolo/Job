@@ -29,7 +29,7 @@ namespace Team_Project
             InitializeComponent();
             repository = r;
             employee = e;
-            repository.ReadVacancies();
+            repository.ReadVacancies();            
             DataGridResult.ItemsSource = null;
             DataGridResult.ItemsSource = repository.vacancies;
 
@@ -38,7 +38,9 @@ namespace Team_Project
         private void DefSpecialization_Click(object sender, RoutedEventArgs e)
         {
             DataGridResult.ItemsSource = null;
-            DataGridResult.ItemsSource =Helper.Vacancies(employee.Specializations) ;
+            List<Employee> d = repository.GetEmployees();
+            Employee employee_ = d.FirstOrDefault(x => x.Login == employee.Login);
+            DataGridResult.ItemsSource =Helper.Vacancies(employee_.Specializations) ;
         }
 
         private void AddResume_Click(object sender, RoutedEventArgs e)

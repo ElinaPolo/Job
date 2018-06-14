@@ -85,11 +85,17 @@
     <Compile Include="EmployerAccountPage.xaml.cs">
       <DependentUpon>EmployerAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InviteEmployee.xaml.cs">
+      <DependentUpon>InviteEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resumes.xaml.cs">
       <DependentUpon>Resumes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SendInvitation.xaml.cs">
+      <DependentUpon>SendInvitation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
@@ -122,6 +128,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="InviteEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +149,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resumes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SendInvitation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

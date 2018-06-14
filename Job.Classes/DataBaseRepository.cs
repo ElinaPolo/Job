@@ -26,7 +26,7 @@ namespace Job.Classes
         {
             using (var context = new Context())
             {
-                employee = context.Employee_.ToList();
+                employee = context.Employee_.Include("Specializations").ToList();
                 return employee;
              }       
         }
@@ -38,6 +38,7 @@ namespace Job.Classes
         {
             employee = GetEmployees();
         }
+        
         public void ReadVacancies()
         {
             vacancies = GetVacancies();
@@ -175,16 +176,7 @@ namespace Job.Classes
             }
         }
         
-        
-        public List<Employee> Employees(Employer employer)
-        {
-            using (var context=new Context())
-            {
-                return context.Employer_.FirstOrDefault(x => x.Login == employer.Login).Employees_.ToList();
-            }
-
-        }
-
+       
         public void SendInvitation(Employee employee, Vacancy vacancy,string comment)
         {
             using (var context = new Context())

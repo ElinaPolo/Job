@@ -62,5 +62,15 @@ namespace Team_Project
         {
             NavigationService.Navigate(new Resumes(repository, employer));
         }
+
+        private void Invite_Click(object sender, RoutedEventArgs e)
+        {
+            if (DataGridResult.SelectedItem != null)
+            {
+                var s = DataGridResult.SelectedItem as Employee;
+                NavigationService.Navigate(new InviteEmployee(repository, s, employer));
+            }
+            else { MessageBox.Show("Choose employee!"); }
+        }
     }
 }

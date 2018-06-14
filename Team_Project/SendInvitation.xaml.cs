@@ -17,28 +17,32 @@ using System.Windows.Shapes;
 namespace Team_Project
 {
     /// <summary>
-    /// Логика взаимодействия для Resumes.xaml
+    /// Логика взаимодействия для SendInvitation.xaml
     /// </summary>
-    public partial class Resumes : Page
+    public partial class SendInvitation : Page
     {
         private IRepository repository;
         private Employer employer;
-        public Resumes(IRepository r, Employer e)
+        private Resume resume;
+        public SendInvitation(IRepository r,Employer e, Resume res)
         {
             InitializeComponent();
             repository = r;
             employer = e;
-            repository.ReadEmployers();
-            var s = repository.employer.FirstOrDefault(x => x.Login == e.Login).Resumes.ToList();
-            DataGridResult.ItemsSource = s; 
+            resume = res;
+
         }
 
-        private void Accept_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var r = DataGridResult.SelectedItem as Resume;
-            var ee = r.Employee;
-            NavigationService.Navigate(new SendInvitation(repository, employer,r));
-            repository.SendInvitation(ee, r.Vacancy, null);
+            NavigationService.Navigate(new EmployerAccountPage(repository, employer));
+        }
+
+        private void Send_Click(object sender, RoutedEventArgs e)
+        {
+            var ee = resume.Employee;        
+            repository.SendInvitation(ee, resume.Vacancy, textBoxComment.Text);
+
         }
     }
 }

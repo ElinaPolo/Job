@@ -29,6 +29,7 @@ namespace Team_Project
             repository = r;
             employee = e;
             repository.GetInvitations(employee);
+
             DataGridResult.ItemsSource = null;
             DataGridResult.ItemsSource = Helper.EmployeeInvitations(employee, repository.invitations);
         }
